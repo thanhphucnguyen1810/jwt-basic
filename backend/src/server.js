@@ -4,7 +4,9 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 const jwt = require("jsonwebtoken");
+
 const authRoute = require("./routes/auth.route")
+const userRoute = require("./routes/user.route")
 
 dotenv.config();
 const app = express();
@@ -29,11 +31,12 @@ app.use(express.json());
 
 //ROUTES
 app.use("/v1/auth", authRoute);
+app.use("/v1/user", userRoute);
+
+// JSON WEB TOKEN
 
 
 // AUTHENTIFICATION  (login, signup)
-
 // AUTHORIZATION (protected routes)
 
-// ROUTES
 
